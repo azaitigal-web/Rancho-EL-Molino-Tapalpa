@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rancho el Molino - Elegancia y Naturaleza en Tapalpa</title>
+    <meta name="description" content="Disfruta de la elegancia y naturaleza en Rancho el Molino, Tapalpa. Pensión equina, renta de terraza y cabañas de lujo.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://i.postimg.cc/Mpt9t1ZH/IMG-20251025-WA0007.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .card-bg {
+             background-color: #2d3748;
+        }
+        .gallery-img {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white tracking-wider font-serif">Rancho el Molino</a>
+            <nav class="hidden md:flex space-x-8 text-lg">
+                <a href="#servicios" class="hover:text-amber-300 transition-colors duration-300">Servicios</a>
+                <a href="#nosotros" class="hover:text-amber-300 transition-colors duration-300">Nosotros</a>
+                <a href="#galeria" class="hover:text-amber-300 transition-colors duration-300">Galería</a>
+                <a href="#contacto" class="hover:text-amber-300 transition-colors duration-300">Contacto</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 px-6 pt-2 pb-4 space-y-2">
+            <a href="#servicios" class="block text-white hover:text-amber-300 py-2">Servicios</a>
+            <a href="#nosotros" class="block text-white hover:text-amber-300 py-2">Nosotros</a>
+            <a href="#galeria" class="block text-white hover:text-amber-300 py-2">Galería</a>
+            <a href="#contacto" class="block text-white hover:text-amber-300 py-2">Contacto</a>
+        </div>
+    </header>
+
+    <section class="hero-bg h-screen flex items-center justify-center text-center text-white pt-16">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 tracking-wide">Donde la Elegancia se Encuentra con la Naturaleza</h1>
+            <p class="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">Una experiencia inolvidable en Tapalpa.</p>
+            <a href="#servicios" class="bg-amber-400 text-gray-900 hover:bg-amber-300 font-bold py-3 px-8 rounded-lg text-lg transition-transform duration-300 transform hover:scale-105 inline-block">Descubre la Magia</a>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-20 md:py-28">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">Nuestros Servicios</h2>
+            <div class="w-24 h-1 bg-amber-400 mx-auto mb-12"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="card-bg rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://i.postimg.cc/JnwmYg0L/DSC0019.jpg" alt="Pensión Equina" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-amber-400 mb-2">Pensión Equina</h3>
+                        <p class="text-gray-400">Ofrecemos cuidado de primera clase para tu caballo en un entorno natural y seguro.</p>
+                    </div>
+                </div>
+                <div class="card-bg rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://i.postimg.cc/3NPtrDL2/12364c6d-f66b-4302-af07-530372e09f4b.jpg" alt="Renta de Terraza" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-amber-400 mb-2">Renta de Terraza</h3>
+                        <p class="text-gray-400">Espacio versátil con vistas espectaculares, ideal para eventos sociales o corporativos.</p>
+                    </div>
+                </div>
+                <div class="card-bg rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://i.postimg.cc/qR9wzT0X/IMG-20251025-WA0008.jpg" alt="Paseos y Clases" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-amber-400 mb-2">Paseos y Clases</h3>
+                        <p class="text-gray-400">Conecta con la naturaleza a través de paseos guiados y clases de equitación.</p>
+                    </div>
+                </div>
+                <div class="card-bg rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://i.postimg.cc/rp6d0QPx/45826614-fadd-47c1-a5fa-f4fda7735fb2.jpg" alt="Renta de Cabaña" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-amber-400 mb-2">Renta de Cabaña</h3>
+                        <p class="text-gray-400">Cabaña para 10 personas con chimenea, fogatero y una experiencia de paz única.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="bg-gray-900 py-20 md:py-28">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://i.postimg.cc/pdn6kXkr/IMG-20260207-WA0025.jpg" alt="Nuestra Esencia" class="rounded-lg shadow-2xl w-full">
+            </div>
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Nuestra Esencia</h2>
+                <div class="w-24 h-1 bg-amber-400 mb-8 mx-auto md:mx-0"></div>
+                <p class="text-lg text-gray-400 mb-6 leading-relaxed">En Rancho el Molino, fusionamos la belleza rústica del campo jalisciense con un toque de elegancia y confort.</p>
+                <p class="text-lg text-gray-400 leading-relaxed">Nuestra pasión es crear experiencias memorables, ya sea en un evento mágico o una cabalgata al atardecer.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-20 md:py-28">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">Momentos Inolvidables</h2>
+            <div class="w-24 h-1 bg-amber-400 mx-auto mb-12"></div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/9MbKwgJW/IMG-20260206-WA0055.jpg" alt="Paisaje" class="gallery-img w-full h-48 object-cover"></div>
+                <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/y6mwKtGD/1000000552-3668b1d9bb497bd089d9c33695b56882-20-11-2024-12-58-27-p-m-20250806-135914-0000.jpg" alt="Boda" class="gallery-img w-full h-48 object-cover"></div>
+                <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/kXbskhKS/DSC0013.jpg" alt="Caballo" class="gallery-img w-full h-48 object-cover"></div>
+                <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/ydhBQTnN/9002bfd4-4bec-46ac-bb18-bd526b03899e.jpg" alt="Terraza Noche" class="gallery-img w-full h-48 object-cover"></div>
+                <div class="col-span-2 overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/fLsQ99ZZ/IMG-20251025-WA0010.jpg" alt="Evento" class="gallery-img w-full h-64 object-cover"></div>
+                <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/VsTGW3Y5/86339f8c-6371-4ae2-9f62-e3df1eb97877.jpg" alt="Gastronomía" class="gallery-img w-full h-64 object-cover"></div>
+                <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/FsyqzSCw/DSC0013-1.jpg" alt="Atardecer" class="gallery-img w-full h-64 object-cover"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="bg-gray-900 py-20 md:py-28">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Contáctanos</h2>
+            <div class="w-24 h-1 bg-amber-400 mx-auto mb-12"></div>
+            <div class="max-w-2xl mx-auto card-bg p-8 rounded-2xl shadow-2xl">
+                <h3 class="text-2xl text-amber-400 font-bold mb-4">¿Listo para visitarnos?</h3>
+                <p class="text-gray-300 mb-8">Tapalpa, Jalisco, México. Haz clic abajo para reservar vía WhatsApp.</p>
+                <a href="https://wa.me/523411670546" target="_blank" class="bg-amber-400 text-gray-900 font-bold py-4 px-10 rounded-full hover:bg-amber-300 transition-all transform hover:scale-105 inline-block">
+                    Enviar WhatsApp Directo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 border-t border-gray-800 py-8 text-center text-gray-500">
+        <p>&copy; 2026 Rancho el Molino. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html>
