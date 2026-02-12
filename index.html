@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rancho el Molino - Elegancia y Naturaleza en Tapalpa</title>
-    <meta name="description" content="Disfruta de la elegancia y naturaleza en Rancho el Molino, Tapalpa. Pensión equina, renta de terraza y cabañas de lujo.">
+    <title>Rancho el Molino - Elegancia y Naturaleza en Tapalpa</title>    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --swiper-theme-color: #fbbf24;
+            --swiper-navigation-size: 22px;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #1a202c;
@@ -18,10 +23,14 @@
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
         }
-        .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://i.postimg.cc/Mpt9t1ZH/IMG-20251025-WA0007.jpg);
-            background-size: cover;
-            background-position: center;
+        .swiper-button-next, .swiper-button-prev {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 50%;
+            color: #fbbf24 !important;
+        }
+        .swiper-pagination-bullet-active {
+            background: #fbbf24 !important;
         }
         .card-bg {
              background-color: #2d3748;
@@ -37,129 +46,234 @@
 </head>
 <body class="antialiased">
 
-    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white tracking-wider font-serif">Rancho el Molino</a>
-            <nav class="hidden md:flex space-x-8 text-lg">
-                <a href="#servicios" class="hover:text-amber-300 transition-colors duration-300">Servicios</a>
-                <a href="#nosotros" class="hover:text-amber-300 transition-colors duration-300">Nosotros</a>
-                <a href="#galeria" class="hover:text-amber-300 transition-colors duration-300">Galería</a>
-                <a href="#contacto" class="hover:text-amber-300 transition-colors duration-300">Contacto</a>
-            </nav>
-            <div class="md:hidden">
-                <button id="menu-btn" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
+<header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-white tracking-wider font-serif">Rancho el Molino</a>
+        <nav class="hidden md:flex space-x-8 text-lg">
+            <a href="#servicios" class="hover:text-amber-300 transition-colors duration-300">Servicios</a>
+            <a href="#empresas" class="hover:text-amber-300 transition-colors duration-300">Empresas</a>
+            <a href="#nosotros" class="hover:text-amber-300 transition-colors duration-300">Nosotros</a>
+            <a href="#galeria" class="hover:text-amber-300 transition-colors duration-300">Galería</a>
+            <a href="#contacto" class="hover:text-amber-300 transition-colors duration-300">Contacto</a>
+        </nav>
+        <div class="md:hidden">
+            <button id="menu-btn" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 px-6 pt-2 pb-4 space-y-2 text-center">
+        <a href="#servicios" class="block text-white hover:text-amber-300 py-2">Servicios</a>
+        <a href="#empresas" class="block text-white hover:text-amber-300 py-2">Empresas</a>
+        <a href="#nosotros" class="block text-white hover:text-amber-300 py-2">Nosotros</a>
+        <a href="#galeria" class="block text-white hover:text-amber-300 py-2">Galería</a>
+        <a href="#contacto" class="block text-white hover:text-amber-300 py-2">Contacto</a>
+    </div>
+</header>
+
+<section class="relative h-screen overflow-hidden">
+    <div class="swiper heroSwiper absolute inset-0 z-0">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide h-full">
+                <div class="w-full h-full bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.postimg.cc/Mpt9t1ZH/IMG-20251025-WA0007.jpg');"></div>
+            </div>
+            <div class="swiper-slide h-full">
+                <div class="w-full h-full bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.postimg.cc/52vCRc9k/DSC0014.jpg');"></div>
+            </div>
+            <div class="swiper-slide h-full">
+                <div class="w-full h-full bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.postimg.cc/wjH0NT0h/a93a6ab1-ecca-4556-8561-d91266019ebd.jpg');"></div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 px-6 pt-2 pb-4 space-y-2">
-            <a href="#servicios" class="block text-white hover:text-amber-300 py-2">Servicios</a>
-            <a href="#nosotros" class="block text-white hover:text-amber-300 py-2">Nosotros</a>
-            <a href="#galeria" class="block text-white hover:text-amber-300 py-2">Galería</a>
-            <a href="#contacto" class="block text-white hover:text-amber-300 py-2">Contacto</a>
-        </div>
-    </header>
-
-    <section class="hero-bg h-screen flex items-center justify-center text-center text-white pt-16">
-        <div class="container mx-auto px-6">
+    </div>
+    <div class="relative z-10 container mx-auto px-6 h-full flex items-center justify-center text-center text-white pt-16">
+        <div>
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 tracking-wide">Donde la Elegancia se Encuentra con la Naturaleza</h1>
             <p class="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">Una experiencia inolvidable en Tapalpa.</p>
             <a href="#servicios" class="bg-amber-400 text-gray-900 hover:bg-amber-300 font-bold py-3 px-8 rounded-lg text-lg transition-transform duration-300 transform hover:scale-105 inline-block">Descubre la Magia</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="servicios" class="py-20 md:py-28">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">Nuestros Servicios</h2>
-            <div class="w-24 h-1 bg-amber-400 mx-auto mb-12"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="card-bg rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://i.postimg.cc/JnwmYg0L/DSC0019.jpg" alt="Pensión Equina" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-amber-400 mb-2">Pensión Equina</h3>
-                        <p class="text-gray-400">Ofrecemos cuidado de primera clase para tu caballo en un entorno natural y seguro.</p>
+<section id="servicios" class="py-20 md:py-28">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">Nuestros Servicios</h2>
+        <div class="w-24 h-1 bg-amber-400 mx-auto mb-12"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            
+            <div class="card-bg rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="swiper mySwiper h-64">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/JnwmYg0L/DSC0019.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/ZKN7rmwq/a50fe1ab-315f-418a-9045-32782608f1ca.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/0jSHV10J/5f570420-b00d-4459-9db4-6357ea727ce3.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/1RLpSqyx/Screenshot-20260211-181324-Video-Player-2.jpg" class="w-full h-full object-cover"></div>
                     </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
+                </div>                   
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-amber-400 mb-2">Pensión Equina</h3>
+                    <p class="text-gray-400">Ofrecemos cuidado de primera clase para tu caballo en un entorno natural y seguro.</p>
                 </div>
-                <div class="card-bg rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://i.postimg.cc/3NPtrDL2/12364c6d-f66b-4302-af07-530372e09f4b.jpg" alt="Renta de Terraza" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-amber-400 mb-2">Renta de Terraza</h3>
-                        <p class="text-gray-400">Espacio versátil con vistas espectaculares, ideal para eventos sociales o corporativos.</p>
+            </div>
+
+            <div class="card-bg rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="swiper mySwiper h-64">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/3NPtrDL2/12364c6d-f66b-4302-af07-530372e09f4b.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/brGWt2Bx/026bd100_e66d_44ac_97db_744c61dda4bf.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/9MQvcktF/12364c6d_f66b_4302_af07_530372e09f4b.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/y6mwKtGD/1000000552_3668b1d9bb497bd089d9c33695b56882-20_11_2024,_12_58_27_p.m._20250806_135914_0000.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/9Mgs0BJp/25085e53_97c5_4858_a76e_3dcd0f733f5d.jpg" class="w-full h-full object-cover"></div>
                     </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
                 </div>
-                <div class="card-bg rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://i.postimg.cc/qR9wzT0X/IMG-20251025-WA0008.jpg" alt="Paseos y Clases" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-amber-400 mb-2">Paseos y Clases</h3>
-                        <p class="text-gray-400">Conecta con la naturaleza a través de paseos guiados y clases de equitación.</p>
-                    </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-amber-400 mb-2">Renta de Terraza</h3>
+                    <p class="text-gray-400">Espacio versátil con vistas espectaculares para eventos sociales o corporativos.</p>
                 </div>
-                <div class="card-bg rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://i.postimg.cc/rp6d0QPx/45826614-fadd-47c1-a5fa-f4fda7735fb2.jpg" alt="Renta de Cabaña" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-amber-400 mb-2">Renta de Cabaña</h3>
-                        <p class="text-gray-400">Cabaña para 10 personas con chimenea, fogatero y una experiencia de paz única.</p>
+            </div>
+
+            <div class="card-bg rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="swiper mySwiper h-64">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/qR9wzT0X/IMG-20251025-WA0008.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/JzCcNBFH/IMG_1055.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/jjrgS1TG/IMG_20250910_WA0013.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/Xvc2Gg73/IMG_20250910_WA0021.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/Y9rd1mhG/IMG_20250812_WA0062.jpg" class="w-full h-full object-cover"></div>
                     </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-amber-400 mb-2">Cabalgatas y clases</h3>
+                    <p class="text-gray-400">Conecta con la naturaleza a través de paseos guiados y clases de equitación.</p>
+                </div>
+            </div>
+
+            <div class="card-bg rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="swiper mySwiper h-64">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/rp6d0QPx/45826614-fadd-47c1-a5fa-f4fda7735fb2.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/15t8VRM3/IMG_20250809_WA0053.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/fb4yPcsQ/5c7797e0_7ab1_4f51_9b42_4d296fb87732.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/65myrs1K/IMG_20250809_WA0054.jpg" class="w-full h-full object-cover"></div>
+                          <div class="swiper-slide"><img src="https://i.postimg.cc/JzHtKT93/IMG_20250809_WA0057.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/SNvJ60th/IMG_20250809_WA0055.jpg" class="w-full h-full object-cover"></div>
+                                                <div class="swiper-slide"><img src="https://i.postimg.cc/NfMK2GbL/IMG_20250809_WA0056.jpg" class="w-full h-full object-cover"></div>
+                        <div class="swiper-slide"><img src="https://i.postimg.cc/zB4qL5ff/1269bc30-9e16-44ae-946d-d51f104ca82a.jpg" class="w-full h-full object-cover"></div>
+                    </div>
+                    <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-amber-400 mb-2">Renta de Cabaña</h3>
+                    <p class="text-gray-400">Cabaña para 10 personas con chimenea, fogatero y una experiencia de paz única.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="nosotros" class="bg-gray-900 py-20 md:py-28">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+<section id="nosotros" class="bg-gray-900 py-20 md:py-28">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+            <img src="https://i.postimg.cc/pdn6kXkr/IMG-20260207-WA0025.jpg" alt="Nuestra Esencia" class="rounded-lg shadow-2xl w-full">
+        </div>
+        <div class="md:w-1/2 text-center md:text-left">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Nuestra Esencia</h2>
+            <div class="w-24 h-1 bg-amber-400 mb-8 mx-auto md:mx-0"></div>
+            <p class="text-lg text-gray-400 mb-6 leading-relaxed">En Rancho el Molino, fusionamos la belleza rústica del campo jalisciense con un toque de elegancia y confort.</p>
+            <p class="text-lg text-gray-400 leading-relaxed">Nuestra pasión es crear experiencias memorables, ya sea en un evento mágico o una cabalgata al atardecer.</p>
+        </div>
+    </div>
+</section>
+
+<section id="galeria" class="py-20 md:py-28">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">Momentos Inolvidables</h2>
+        <div class="w-24 h-1 bg-amber-400 mx-auto mb-12"></div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/9MbKwgJW/IMG-20260206-WA0055.jpg" class="gallery-img w-full h-48 object-cover"></div>
+            <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/y6mwKtGD/1000000552-3668b1d9bb497bd089d9c33695b56882-20-11-2024-12-58-27-p-m-20250806-135914-0000.jpg" class="gallery-img w-full h-48 object-cover"></div>
+            <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/kXbskhKS/DSC0013.jpg" class="gallery-img w-full h-48 object-cover"></div>
+            <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/ydhBQTnN/9002bfd4-4bec-46ac-bb18-bd526b03899e.jpg" class="gallery-img w-full h-48 object-cover"></div>
+            <div class="col-span-2 overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/fLsQ99ZZ/IMG-20251025-WA0010.jpg" class="gallery-img w-full h-64 object-cover"></div>
+            <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/VsTGW3Y5/86339f8c-6371-4ae2-9f62-e3df1eb97877.jpg" class="gallery-img w-full h-64 object-cover"></div>
+            <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/FsyqzSCw/DSC0013-1.jpg" class="gallery-img w-full h-64 object-cover"></div>
+        </div>
+    </div>
+</section>
+
+<section id="empresas" class="py-20 bg-slate-800">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center gap-12 bg-gray-900 rounded-3xl overflow-hidden shadow-2xl border border-amber-400/20">
             <div class="md:w-1/2">
-                <img src="https://i.postimg.cc/pdn6kXkr/IMG-20260207-WA0025.jpg" alt="Nuestra Esencia" class="rounded-lg shadow-2xl w-full">
+                <img src="https://i.postimg.cc/Fzkm4K0z/DSC0041.jpg" alt="Evento Corporativo" class="w-full h-full object-cover min-h-[400px]">
             </div>
-            <div class="md:w-1/2 text-center md:text-left">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Nuestra Esencia</h2>
-                <div class="w-24 h-1 bg-amber-400 mb-8 mx-auto md:mx-0"></div>
-                <p class="text-lg text-gray-400 mb-6 leading-relaxed">En Rancho el Molino, fusionamos la belleza rústica del campo jalisciense con un toque de elegancia y confort.</p>
-                <p class="text-lg text-gray-400 leading-relaxed">Nuestra pasión es crear experiencias memorables, ya sea en un evento mágico o una cabalgata al atardecer.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="galeria" class="py-20 md:py-28">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">Momentos Inolvidables</h2>
-            <div class="w-24 h-1 bg-amber-400 mx-auto mb-12"></div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/9MbKwgJW/IMG-20260206-WA0055.jpg" alt="Paisaje" class="gallery-img w-full h-48 object-cover"></div>
-                <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/y6mwKtGD/1000000552-3668b1d9bb497bd089d9c33695b56882-20-11-2024-12-58-27-p-m-20250806-135914-0000.jpg" alt="Boda" class="gallery-img w-full h-48 object-cover"></div>
-                <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/kXbskhKS/DSC0013.jpg" alt="Caballo" class="gallery-img w-full h-48 object-cover"></div>
-                <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/ydhBQTnN/9002bfd4-4bec-46ac-bb18-bd526b03899e.jpg" alt="Terraza Noche" class="gallery-img w-full h-48 object-cover"></div>
-                <div class="col-span-2 overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/fLsQ99ZZ/IMG-20251025-WA0010.jpg" alt="Evento" class="gallery-img w-full h-64 object-cover"></div>
-                <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/VsTGW3Y5/86339f8c-6371-4ae2-9f62-e3df1eb97877.jpg" alt="Gastronomía" class="gallery-img w-full h-64 object-cover"></div>
-                <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/FsyqzSCw/DSC0013-1.jpg" alt="Atardecer" class="gallery-img w-full h-64 object-cover"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="bg-gray-900 py-20 md:py-28">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold mb-4">Contáctanos</h2>
-            <div class="w-24 h-1 bg-amber-400 mx-auto mb-12"></div>
-            <div class="max-w-2xl mx-auto card-bg p-8 rounded-2xl shadow-2xl">
-                <h3 class="text-2xl text-amber-400 font-bold mb-4">¿Listo para visitarnos?</h3>
-                <p class="text-gray-300 mb-8">Tapalpa, Jalisco, México. Haz clic abajo para reservar vía WhatsApp.</p>
-                <a href="https://wa.me/523411670546" target="_blank" class="bg-amber-400 text-gray-900 font-bold py-4 px-10 rounded-full hover:bg-amber-300 transition-all transform hover:scale-105 inline-block">
-                    Enviar WhatsApp Directo
+            <div class="md:w-1/2 p-8 md:p-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Experiencias Corporativas</h2>
+                <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                    Transforme la dinámica de su equipo en un entorno inspirador. Especialistas en eventos corporativos de alto nivel.
+                </p>
+                <ul class="text-gray-400 mb-8 space-y-3">
+                    <li class="flex items-center"><span class="text-amber-400 mr-2">✔</span> Cabalgatas grupales (hasta 50 personas)</li>
+                    <li class="flex items-center"><span class="text-amber-400 mr-2">✔</span> Dinámicas de integración en la naturaleza</li>
+                    <li class="flex items-center"><span class="text-amber-400 mr-2">✔</span> Servicio de catering y terraza privada</li>
+                </ul>
+                <a href="mailto:ranchoelmolinotapalpa@gmail.com" class="inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-lg hover:bg-amber-400 transition-colors duration-300">
+                    Contactar Área Ejecutiva
                 </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="bg-gray-900 border-t border-gray-800 py-8 text-center text-gray-500">
-        <p>&copy; 2026 Rancho el Molino. Todos los derechos reservados.</p>
-    </footer>
+<section id="contacto" class="bg-gray-900 py-20 md:py-28">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">Contáctanos</h2>
+        <div class="w-24 h-1 bg-amber-400 mx-auto mb-12"></div>
+        <div class="max-w-2xl mx-auto card-bg p-8 rounded-2xl shadow-2xl">
+            <h3 class="text-2xl text-amber-400 font-bold mb-4">¿Listo para visitarnos?</h3>
+            <p class="text-gray-300 mb-8">Tapalpa, Jalisco, México. Haz clic abajo para reservar vía WhatsApp.</p>
+            <a href="https://wa.me/523411670546" target="_blank" class="bg-amber-400 text-gray-900 font-bold py-4 px-10 rounded-full hover:bg-amber-300 transition-all transform hover:scale-105 inline-block">
+                Enviar WhatsApp Directo
+            </a>
+        </div>
+    </div>
+</section>
 
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-        });
-    </script>
+<footer class="bg-gray-900 border-t border-gray-800 py-8 text-center text-gray-500">
+    <p>&copy; 2026 Rancho el Molino. Todos los derechos reservados.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    // 1. Carrusel del Inicio (Fondo)
+    const heroSwiper = new Swiper(".heroSwiper", {
+        loop: true,
+        effect: "fade",
+        fadeEffect: { crossFade: true },
+        autoplay: { delay: 5000, disableOnInteraction: false },
+    });
+
+    // 2. Todos los carruseles de Servicios
+    const swipers = new Swiper(".mySwiper", {
+        loop: true,
+        pagination: { el: ".swiper-pagination", clickable: true },
+        navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+        autoplay: { delay: 3000, disableOnInteraction: false },
+    });
+
+    // 3. Menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+</script>
 </body>
 </html>
